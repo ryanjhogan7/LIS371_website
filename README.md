@@ -32,7 +32,6 @@ An online auction platform dedicated to used golf clubs, providing a specialized
 4. Open `index.html` in browser or deploy with `firebase deploy`
 
 ## Team
-Ryan Hogan
-Alan Sologov
+Ryan Hogan & Alan Sologov
 
 **Course**: IS371
