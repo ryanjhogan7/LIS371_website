@@ -74,25 +74,14 @@ const pages = {
                                 <p class="title is-5">TaylorMade R15 Driver</p>
                                 <p class="subtitle is-6 has-text-grey">Excellent condition, 10.5° loft, regular flex shaft</p>
                                 <div class="content">
-                                    <div class="level is-mobile mb-3">
-                                        <div class="level-left">
-                                            <div class="level-item">
-                                                <span class="bid-price">Current Bid: $125</span>
-                                            </div>
-                                        </div>
-                                        <div class="level-right">
-                                            <div class="level-item">
-                                                <span class="time-remaining">
-                                                    <i class="far fa-clock"></i> 2h 34m
-                                                </span>
-                                            </div>
-                                        </div>
+                                    <div class="mb-3">
+                                        <span class="bid-price">Asking Price: $125</span>
                                     </div>
-                                    <button class="button is-primary is-fullwidth" onclick="openBidModal('TaylorMade R15 Driver', 125)">
+                                    <button class="button is-primary is-fullwidth" onclick="openContactModal('TaylorMade R15 Driver')">
                                         <span class="icon">
-                                            <i class="fas fa-gavel"></i>
+                                            <i class="fas fa-envelope"></i>
                                         </span>
-                                        <span>Place Bid</span>
+                                        <span>Contact Seller</span>
                                     </button>
                                 </div>
                             </div>
@@ -111,25 +100,14 @@ const pages = {
                                 <p class="title is-5">Scotty Cameron Newport 2</p>
                                 <p class="subtitle is-6 has-text-grey">Classic blade putter, 34", minor wear</p>
                                 <div class="content">
-                                    <div class="level is-mobile mb-3">
-                                        <div class="level-left">
-                                            <div class="level-item">
-                                                <span class="bid-price">Current Bid: $280</span>
-                                            </div>
-                                        </div>
-                                        <div class="level-right">
-                                            <div class="level-item">
-                                                <span class="time-remaining">
-                                                    <i class="far fa-clock"></i> 1d 5h
-                                                </span>
-                                            </div>
-                                        </div>
+                                    <div class="mb-3">
+                                        <span class="bid-price">Asking Price: $280</span>
                                     </div>
-                                    <button class="button is-primary is-fullwidth" onclick="openBidModal('Scotty Cameron Newport 2', 280)">
+                                    <button class="button is-primary is-fullwidth" onclick="openContactModal('Scotty Cameron Newport 2')">
                                         <span class="icon">
-                                            <i class="fas fa-gavel"></i>
+                                            <i class="fas fa-envelope"></i>
                                         </span>
-                                        <span>Place Bid</span>
+                                        <span>Contact Seller</span>
                                     </button>
                                 </div>
                             </div>
@@ -148,25 +126,14 @@ const pages = {
                                 <p class="title is-5">Callaway Apex Iron Set</p>
                                 <p class="subtitle is-6 has-text-grey">5-PW, forged, great for low handicappers</p>
                                 <div class="content">
-                                    <div class="level is-mobile mb-3">
-                                        <div class="level-left">
-                                            <div class="level-item">
-                                                <span class="bid-price">Current Bid: $450</span>
-                                            </div>
-                                        </div>
-                                        <div class="level-right">
-                                            <div class="level-item">
-                                                <span class="time-remaining">
-                                                    <i class="far fa-clock"></i> 3d 12h
-                                                </span>
-                                            </div>
-                                        </div>
+                                    <div class="mb-3">
+                                        <span class="bid-price">Asking Price: $450</span>
                                     </div>
-                                    <button class="button is-primary is-fullwidth" onclick="openBidModal('Callaway Apex Iron Set', 450)">
+                                    <button class="button is-primary is-fullwidth" onclick="openContactModal('Callaway Apex Iron Set')">
                                         <span class="icon">
-                                            <i class="fas fa-gavel"></i>
+                                            <i class="fas fa-envelope"></i>
                                         </span>
-                                        <span>Place Bid</span>
+                                        <span>Contact Seller</span>
                                     </button>
                                 </div>
                             </div>
@@ -185,25 +152,14 @@ const pages = {
                                 <p class="title is-5">Titleist Vokey SM8 Wedge</p>
                                 <p class="subtitle is-6 has-text-grey">56° sand wedge, M grind, lightly used</p>
                                 <div class="content">
-                                    <div class="level is-mobile mb-3">
-                                        <div class="level-left">
-                                            <div class="level-item">
-                                                <span class="bid-price">Current Bid: $85</span>
-                                            </div>
-                                        </div>
-                                        <div class="level-right">
-                                            <div class="level-item">
-                                                <span class="time-remaining">
-                                                    <i class="far fa-clock"></i> 18h
-                                                </span>
-                                            </div>
-                                        </div>
+                                    <div class="mb-3">
+                                        <span class="bid-price">Asking Price: $85</span>
                                     </div>
-                                    <button class="button is-primary is-fullwidth" onclick="openBidModal('Titleist Vokey SM8 Wedge', 85)">
+                                    <button class="button is-primary is-fullwidth" onclick="openContactModal('Titleist Vokey SM8 Wedge')">
                                         <span class="icon">
-                                            <i class="fas fa-gavel"></i>
+                                            <i class="fas fa-envelope"></i>
                                         </span>
-                                        <span>Place Bid</span>
+                                        <span>Contact Seller</span>
                                     </button>
                                 </div>
                             </div>
@@ -218,7 +174,7 @@ const pages = {
             <div class="container has-text-centered">
                 <h3 class="title is-2 has-text-white">Ready to List Your Clubs?</h3>
                 <p class="subtitle is-4 has-text-white mb-5">Join our community and start selling today</p>
-                <button class="button is-light is-large">
+                <button class="button is-light is-large" onclick="loadPage('create')">
                     <span class="icon">
                         <i class="fas fa-plus-circle"></i>
                     </span>
@@ -371,17 +327,12 @@ const pages = {
                                 <p class="title is-5">Ping G425 Driver</p>
                                 <p class="subtitle is-6 has-text-grey">Like new, 9° loft, stiff flex</p>
                                 <div class="content">
-                                    <div class="level is-mobile mb-3">
-                                        <div class="level-left">
-                                            <span class="bid-price">Current Bid: $195</span>
-                                        </div>
-                                        <div class="level-right">
-                                            <span class="time-remaining"><i class="far fa-clock"></i> 4h 22m</span>
-                                        </div>
+                                    <div class="mb-3">
+                                        <span class="bid-price">Asking Price: $195</span>
                                     </div>
-                                    <button class="button is-primary is-fullwidth" onclick="openBidModal('Ping G425 Driver', 195)">
-                                        <span class="icon"><i class="fas fa-gavel"></i></span>
-                                        <span>Place Bid</span>
+                                    <button class="button is-primary is-fullwidth" onclick="openContactModal('Ping G425 Driver')">
+                                        <span class="icon"><i class="fas fa-envelope"></i></span>
+                                        <span>Contact Seller</span>
                                     </button>
                                 </div>
                             </div>
@@ -592,6 +543,167 @@ const pages = {
                 </div>
             </div>
         </footer>
+    `,
+
+    create: `
+        <section class="section">
+            <div class="container">
+                <h1 class="title is-2">Create a Listing</h1>
+                <p class="subtitle">List your golf club for sale</p>
+
+                <div class="columns">
+                    <div class="column is-8 is-offset-2">
+                        <div class="box">
+                            <form id="createListingForm">
+                                <div class="field">
+                                    <label class="label">Club Name *</label>
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="e.g., TaylorMade R15 Driver" required>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Brand</label>
+                                    <div class="control">
+                                        <div class="select is-fullwidth">
+                                            <select>
+                                                <option>Select Brand</option>
+                                                <option>TaylorMade</option>
+                                                <option>Callaway</option>
+                                                <option>Ping</option>
+                                                <option>Titleist</option>
+                                                <option>Cobra</option>
+                                                <option>Mizuno</option>
+                                                <option>Cleveland</option>
+                                                <option>Wilson</option>
+                                                <option>Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Club Type *</label>
+                                    <div class="control">
+                                        <div class="select is-fullwidth">
+                                            <select required>
+                                                <option>Select Type</option>
+                                                <option>Driver</option>
+                                                <option>Fairway Wood</option>
+                                                <option>Hybrid</option>
+                                                <option>Iron Set</option>
+                                                <option>Individual Iron</option>
+                                                <option>Wedge</option>
+                                                <option>Putter</option>
+                                                <option>Complete Set</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Condition *</label>
+                                    <div class="control">
+                                        <div class="select is-fullwidth">
+                                            <select required>
+                                                <option>Select Condition</option>
+                                                <option>Like New</option>
+                                                <option>Excellent</option>
+                                                <option>Very Good</option>
+                                                <option>Good</option>
+                                                <option>Fair</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Asking Price * ($)</label>
+                                    <div class="control has-icons-left">
+                                        <input class="input" type="number" placeholder="150" min="1" required>
+                                        <span class="icon is-left">
+                                            <i class="fas fa-dollar-sign"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Description *</label>
+                                    <div class="control">
+                                        <textarea class="textarea" placeholder="Describe your club, including specs, condition details, and any extras included..." rows="5" required></textarea>
+                                    </div>
+                                    <p class="help">Be as detailed as possible to attract buyers</p>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Upload Photos</label>
+                                    <div class="file has-name is-fullwidth">
+                                        <label class="file-label">
+                                            <input class="file-input" type="file" name="photos" multiple accept="image/*">
+                                            <span class="file-cta">
+                                                <span class="file-icon">
+                                                    <i class="fas fa-upload"></i>
+                                                </span>
+                                                <span class="file-label">
+                                                    Choose photos…
+                                                </span>
+                                            </span>
+                                            <span class="file-name">
+                                                No file selected
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <p class="help">Upload up to 5 photos (JPG, PNG)</p>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Contact Information</label>
+                                    <div class="control has-icons-left">
+                                        <input class="input" type="email" placeholder="your-email@example.com" required>
+                                        <span class="icon is-left">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <div class="control">
+                                        <label class="checkbox">
+                                            <input type="checkbox" required>
+                                            I agree to the <a href="#">terms and conditions</a> and confirm that all information provided is accurate
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="field is-grouped">
+                                    <div class="control">
+                                        <button class="button is-primary" type="submit">
+                                            <span class="icon">
+                                                <i class="fas fa-check"></i>
+                                            </span>
+                                            <span>Create Listing</span>
+                                        </button>
+                                    </div>
+                                    <div class="control">
+                                        <button class="button is-light" type="button" onclick="loadPage('home')">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered has-text-white-ter">
+                    <p>&copy; 2024 GolfClub Auctions. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     `
 };
 
@@ -606,8 +718,25 @@ function loadPage(pageName) {
         link.classList.remove('is-active');
     });
     
+    // Attach event listeners to forms on the loaded page
+    attachPageEventListeners(pageName);
+    
     // Scroll to top
     window.scrollTo(0, 0);
+}
+
+// Function to attach event listeners to dynamically loaded content
+function attachPageEventListeners(pageName) {
+    if (pageName === 'create') {
+        const createListingForm = document.getElementById('createListingForm');
+        if (createListingForm) {
+            createListingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Listing creation will be connected to Firebase in Milestone 3');
+                loadPage('browse');
+            });
+        }
+    }
 }
 
 // Function to open modals
@@ -626,11 +755,10 @@ function closeModal(modalId) {
     }
 }
 
-// Function to open bid modal with item details
-function openBidModal(itemName, currentPrice) {
-    document.getElementById('bidItemName').textContent = itemName;
-    document.getElementById('bidCurrentPrice').textContent = '$' + currentPrice;
-    openModal('bidModal');
+// Function to open contact modal with item details
+function openContactModal(itemName) {
+    document.getElementById('contactItemName').textContent = itemName;
+    openModal('contactModal');
 }
 
 // Hamburger menu toggle for mobile
@@ -673,12 +801,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const bidForm = document.getElementById('bidForm');
-    if (bidForm) {
-        bidForm.addEventListener('submit', (e) => {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Bid submission will be connected to Firebase in Milestone 3');
-            closeModal('bidModal');
+            alert('Message will be sent to seller when Firebase is integrated in Milestone 3');
+            closeModal('contactModal');
         });
     }
 

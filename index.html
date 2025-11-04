@@ -208,35 +208,56 @@
         </div>
     </div>
 
-    <!-- Bid Modal -->
-    <div id="bidModal" class="modal">
-        <div class="modal-background" onclick="closeModal('bidModal')"></div>
+    <!-- Contact Seller Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-background" onclick="closeModal('contactModal')"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Place Your Bid</p>
-                <button class="delete" aria-label="close" onclick="closeModal('bidModal')"></button>
+                <p class="modal-card-title">Contact Seller</p>
+                <button class="delete" aria-label="close" onclick="closeModal('contactModal')"></button>
             </header>
             <section class="modal-card-body">
                 <div class="content">
-                    <h4 id="bidItemName">Item Name</h4>
-                    <p>Current Bid: <strong id="bidCurrentPrice" class="bid-price">$0</strong></p>
+                    <h4 id="contactItemName">Item Name</h4>
+                    <p class="mb-4">Send a message to the seller about this listing.</p>
                 </div>
-                <form id="bidForm">
+                <form id="contactForm">
                     <div class="field">
-                        <label class="label">Your Bid Amount</label>
+                        <label class="label">Your Name</label>
                         <div class="control has-icons-left">
-                            <input class="input" type="number" placeholder="Enter bid amount" min="0" step="5" required>
+                            <input class="input" type="text" placeholder="John Doe" required>
                             <span class="icon is-small is-left">
-                                <i class="fas fa-dollar-sign"></i>
+                                <i class="fas fa-user"></i>
                             </span>
                         </div>
-                        <p class="help">Minimum bid increment: $5</p>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Your Email</label>
+                        <div class="control has-icons-left">
+                            <input class="input" type="email" placeholder="john@example.com" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Message</label>
+                        <div class="control">
+                            <textarea class="textarea" placeholder="Hi, I'm interested in this club..." rows="4" required></textarea>
+                        </div>
                     </div>
                 </form>
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-primary" type="submit">Submit Bid</button>
-                <button class="button" onclick="closeModal('bidModal')">Cancel</button>
+                <button class="button is-primary" type="submit">
+                    <span class="icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </span>
+                    <span>Send Message</span>
+                </button>
+                <button class="button" onclick="closeModal('contactModal')">Cancel</button>
             </footer>
         </div>
     </div>
