@@ -3,156 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GolfClub Auctions - Home Page</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="GolfClub Auctions - The premier marketplace for buying and selling used golf clubs">
+    <meta name="keywords" content="golf clubs, auction, used golf equipment, drivers, irons, putters">
+    <title>GolfClub Auctions - Premier Golf Equipment Marketplace</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Minimal custom styling to match brand colors */
+        .navbar {
+            background-color: #2d5016 !important;
+        }
+        .hero.is-primary {
+            background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)),
+                        url('images/golf-course.jpg') center/cover;
+            background-color: #2d5016;
+        }
+        .button.is-primary {
+            background-color: #4a7c25;
+        }
+        .button.is-primary:hover {
+            background-color: #3a6120;
+        }
+        .cta-section {
+            background-color: #4a7c25;
+        }
+        .footer {
+            background-color: #2d5016;
+        }
+        .bid-price {
+            color: #4a7c25;
+            font-weight: bold;
+        }
+        .time-remaining {
+            color: #e74c3c;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="container">
-            <div class="nav-brand">
-                <h1> GolfClub Auctions</h1>
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#" onclick="loadPage('home')">
+                    <h1 class="title is-4 has-text-white">GolfClub Auctions</h1>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="listings.html">Browse Auctions</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="btn btn-secondary">Sign In</button>
-                <button class="btn btn-primary">Sign Up</button>
+
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item has-text-white" onclick="loadPage('home')">
+                        <i class="fas fa-home mr-2"></i> Home
+                    </a>
+                    <a class="navbar-item has-text-white" onclick="loadPage('browse')">
+                        <i class="fas fa-search mr-2"></i> Browse Auctions
+                    </a>
+                    <a class="navbar-item has-text-white" onclick="loadPage('about')">
+                        <i class="fas fa-info-circle mr-2"></i> About
+                    </a>
+                    <a class="navbar-item has-text-white" onclick="loadPage('contact')">
+                        <i class="fas fa-envelope mr-2"></i> Contact
+                    </a>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <button class="button is-light" onclick="openModal('signinModal')">
+                                <strong>Sign In</strong>
+                            </button>
+                            <button class="button is-primary" onclick="openModal('signupModal')">
+                                <strong>Sign Up</strong>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Main Section -->
-    <header class="main">
-        <div class="main-content">
-            <h2>Find Your Perfect Club</h2>
-            <p>The premier marketplace for buying and selling used golf clubs</p>
-            <button class="btn btn-large">Start Browsing</button>
-        </div>
-    </header>
+    <!-- Main Content Container -->
+    <div id="main-content">
+        <!-- Home page content will be loaded here by default -->
+    </div>
 
-    <!-- Search/Filter Section -->
-    <section class="search-section">
-        <div class="container">
-            <h3>Search Auctions</h3>
-            <div class="search-bar">
-                <input type="text" placeholder="Search by brand, type, or keyword...">
-                <select class="filter-dropdown">
-                    <option>All Types</option>
-                    <option>Drivers</option>
-                    <option>Irons</option>
-                    <option>Putters</option>
-                    <option>Wedges</option>
-                </select>
-                <button class="btn btn-primary">Search</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Auctions -->
-    <section class="auctions">
-        <div class="container">
-            <h3>Featured Auctions</h3>
-            <div class="auction-grid">
-                <!-- Auction Card 1 -->
-                <div class="auction-card">
-                    <div class="card-image">
-                        <img src="images/driver1.jpg" alt="TaylorMade Driver">
-                    </div>
-                    <div class="card-content">
-                        <h4>TaylorMade R15 Driver</h4>
-                        <p class="description">Excellent condition, 10.5° loft, regular flex shaft</p>
-                        <div class="bid-info">
-                            <span class="current-bid">Current Bid: $125</span>
-                            <span class="time-left">2h 34m left</span>
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-background" onclick="closeModal('signupModal')"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Create Your Account</p>
+                <button class="delete" aria-label="close" onclick="closeModal('signupModal')"></button>
+            </header>
+            <section class="modal-card-body">
+                <form id="signupForm">
+                    <div class="field">
+                        <label class="label">Full Name</label>
+                        <div class="control has-icons-left">
+                            <input class="input" type="text" placeholder="John Doe" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
                         </div>
-                        <button class="btn btn-primary btn-full">Place Bid</button>
                     </div>
-                </div>
 
-                <!-- Auction Card 2 -->
-                <div class="auction-card">
-                    <div class="card-image">
-                        <img src="images/putter1.jpg" alt="Scotty Cameron Putter">
-                    </div>
-                    <div class="card-content">
-                        <h4>Scotty Cameron Newport 2</h4>
-                        <p class="description">Classic blade putter, 34", minor wear</p>
-                        <div class="bid-info">
-                            <span class="current-bid">Current Bid: $280</span>
-                            <span class="time-left">1d 5h left</span>
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control has-icons-left">
+                            <input class="input" type="email" placeholder="john@example.com" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
                         </div>
-                        <button class="btn btn-primary btn-full">Place Bid</button>
                     </div>
-                </div>
 
-                <!-- Auction Card 3 -->
-                <div class="auction-card">
-                    <div class="card-image">
-                        <img src="images/irons1.jpg" alt="Callaway Iron Set">
-                    </div>
-                    <div class="card-content">
-                        <h4>Callaway Apex Iron Set</h4>
-                        <p class="description">5-PW, forged, great for low handicappers</p>
-                        <div class="bid-info">
-                            <span class="current-bid">Current Bid: $450</span>
-                            <span class="time-left">3d 12h left</span>
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control has-icons-left">
+                            <input class="input" type="password" placeholder="********" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                            </span>
                         </div>
-                        <button class="btn btn-primary btn-full">Place Bid</button>
                     </div>
-                </div>
 
-                <!-- Auction Card 4 -->
-                <div class="auction-card">
-                    <div class="card-image">
-                        <img src="images/wedge1.jpg" alt="Titleist Vokey Wedge">
-                    </div>
-                    <div class="card-content">
-                        <h4>Titleist Vokey SM8 Wedge</h4>
-                        <p class="description">56° sand wedge, M grind, lightly used</p>
-                        <div class="bid-info">
-                            <span class="current-bid">Current Bid: $85</span>
-                            <span class="time-left">18h left</span>
+                    <div class="field">
+                        <label class="label">Confirm Password</label>
+                        <div class="control has-icons-left">
+                            <input class="input" type="password" placeholder="********" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                            </span>
                         </div>
-                        <button class="btn btn-primary btn-full">Place Bid</button>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Call to Action -->
-    <section class="cta">
-        <div class="container">
-            <h3>Ready to List Your Clubs?</h3>
-            <p>Join our community and start selling today</p>
-            <button class="btn btn-large btn-secondary">Create Listing</button>
+                    <div class="field">
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                I agree to the <a href="#">terms and conditions</a>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-primary" type="submit">Sign Up</button>
+                <button class="button" onclick="closeModal('signupModal')">Cancel</button>
+            </footer>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>GolfClub Auctions</h4>
-                    <p>The premier marketplace for golf equipment</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="listings.html">Browse</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Sign In Modal -->
+    <div id="signinModal" class="modal">
+        <div class="modal-background" onclick="closeModal('signinModal')"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Sign In to Your Account</p>
+                <button class="delete" aria-label="close" onclick="closeModal('signinModal')"></button>
+            </header>
+            <section class="modal-card-body">
+                <form id="signinForm">
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control has-icons-left">
+                            <input class="input" type="email" placeholder="john@example.com" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control has-icons-left">
+                            <input class="input" type="password" placeholder="********" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                Remember me
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <p class="has-text-centered mt-4">
+                    <a href="#">Forgot password?</a>
+                </p>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-primary" type="submit">Sign In</button>
+                <button class="button" onclick="closeModal('signinModal')">Cancel</button>
+            </footer>
         </div>
-    </footer>
+    </div>
+
+    <!-- Bid Modal -->
+    <div id="bidModal" class="modal">
+        <div class="modal-background" onclick="closeModal('bidModal')"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Place Your Bid</p>
+                <button class="delete" aria-label="close" onclick="closeModal('bidModal')"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="content">
+                    <h4 id="bidItemName">Item Name</h4>
+                    <p>Current Bid: <strong id="bidCurrentPrice" class="bid-price">$0</strong></p>
+                </div>
+                <form id="bidForm">
+                    <div class="field">
+                        <label class="label">Your Bid Amount</label>
+                        <div class="control has-icons-left">
+                            <input class="input" type="number" placeholder="Enter bid amount" min="0" step="5" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-dollar-sign"></i>
+                            </span>
+                        </div>
+                        <p class="help">Minimum bid increment: $5</p>
+                    </div>
+                </form>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-primary" type="submit">Submit Bid</button>
+                <button class="button" onclick="closeModal('bidModal')">Cancel</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
 </body>
 </html>
